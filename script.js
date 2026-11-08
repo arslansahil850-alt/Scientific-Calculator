@@ -1076,3 +1076,21 @@
   }
 
 })();
+
+const menuToggle = document.querySelector("#menuToggle");
+const navContent = document.querySelector("#navContent");
+
+menuToggle.addEventListener("click", () => {
+  const isOpen = navContent.classList.toggle("open");
+  menuToggle.classList.toggle("active", isOpen);
+  menuToggle.setAttribute("aria-expanded", isOpen);
+});
+
+document.querySelectorAll(".nav-link, .connect-btn").forEach(link => {
+  link.addEventListener("click", () => {
+    navContent.classList.remove("open");
+    menuToggle.classList.remove("active");
+    menuToggle.setAttribute("aria-expanded", "false");
+  });
+});
+document.querySelector("#footerYear").textContent = new Date().getFullYear();
