@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scientific Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="calculator-container">
+    <section class="calculator" aria-label="Scientific Calculator">
+      
+      <header class="calculator-header">
+        <div class="calculator-brand">
+          <span class="brand-name">QUANTUM</span>
+          <span class="model-badge">fx-991 PRO</span>
+          <span class="sub-badge">NATURAL-V.P.A.M.</span>
+        </div>
+        <div class="solar-panel" aria-label="Two-way solar power cell" role="img">
+          <div class="solar-strip"></div>
+          <div class="solar-strip"></div>
+          <div class="solar-strip"></div>
+          <div class="solar-strip"></div>
+        </div>
+      </header>
+
+      <section class="display" aria-live="polite" aria-label="Calculator screen">
+        <div class="display-glass"></div>
+
+        <div class="display-status">
+          <div class="status-group">
+            <span class="status-indicator active" id="indicator-deg">DEG</span>
+            <span class="status-indicator" id="indicator-rad">RAD</span>
+          </div>
+          <div class="status-group">
+            <span class="status-indicator" id="indicator-m">M</span>
+            <span class="status-indicator active" id="indicator-math">MATH</span>
+            <span class="status-indicator active" id="indicator-fx">FX</span>
+          </div>
+        </div>
+
+        <div class="display-expression" id="display-expression" aria-label="Previous expression">
+          sin(45°) + √(144) × 10²
+        </div>
+
+        <div class="display-current" id="display-current" aria-label="Current result">
+          0
+        </div>
+      </section>
+
+      <section class="memory-buttons" aria-label="Memory and mode controls">
+        <button type="button" class="btn btn-ctrl" data-action="mode" aria-label="Mode selection">MODE</button>
+        <button type="button" class="btn btn-ctrl btn-toggle active" data-action="deg" aria-label="Degrees angle unit">DEG</button>
+        <button type="button" class="btn btn-ctrl btn-toggle" data-action="rad" aria-label="Radians angle unit">RAD</button>
+        <button type="button" class="btn btn-memory" data-action="mc" aria-label="Memory Clear">MC</button>
+        <button type="button" class="btn btn-memory" data-action="mr" aria-label="Memory Recall">MR</button>
+        <button type="button" class="btn btn-memory" data-action="m-minus" aria-label="Memory Subtract">M−</button>
+        <button type="button" class="btn btn-memory" data-action="m-plus" aria-label="Memory Add">M+</button>
+      </section>
+
+      <div class="keypad">
+
+        <section class="scientific-buttons" aria-label="Scientific functions">
+          <button type="button" class="btn btn-sci" data-action="asin" aria-label="arcsine">sin⁻¹</button>
+          <button type="button" class="btn btn-sci" data-action="acos" aria-label="arccosine">cos⁻¹</button>
+          <button type="button" class="btn btn-sci" data-action="atan" aria-label="arctangent">tan⁻¹</button>
+          <button type="button" class="btn btn-sci btn-constant" data-action="pi" aria-label="pi">π</button>
+          <button type="button" class="btn btn-sci btn-constant" data-action="e-const" aria-label="Euler constant e">e</button>
+
+          <button type="button" class="btn btn-sci" data-action="sin" aria-label="sine">sin</button>
+          <button type="button" class="btn btn-sci" data-action="cos" aria-label="cosine">cos</button>
+          <button type="button" class="btn btn-sci" data-action="tan" aria-label="tangent">tan</button>
+          <button type="button" class="btn btn-sci" data-action="log" aria-label="common logarithm base 10">log</button>
+          <button type="button" class="btn btn-sci" data-action="ln" aria-label="natural logarithm">ln</button>
+
+          <button type="button" class="btn btn-sci" data-action="square" aria-label="square">x²</button>
+          <button type="button" class="btn btn-sci" data-action="cube" aria-label="cube">x³</button>
+          <button type="button" class="btn btn-sci" data-action="power" aria-label="x to power of y">xʸ</button>
+          <button type="button" class="btn btn-sci" data-action="exp-e" aria-label="exponential e to power of x">eˣ</button>
+          <button type="button" class="btn btn-sci" data-action="power-10" aria-label="10 to power of x">10ˣ</button>
+
+          <button type="button" class="btn btn-sci" data-action="sqrt" aria-label="square root">√</button>
+          <button type="button" class="btn btn-sci" data-action="cbrt" aria-label="cube root">∛</button>
+          <button type="button" class="btn btn-sci" data-action="log2" aria-label="logarithm base 2">log₂</button>
+          <button type="button" class="btn btn-sci" data-action="reciprocal" aria-label="reciprocal 1 divided by x">1/x</button>
+          <button type="button" class="btn btn-sci" data-action="abs" aria-label="absolute value of x">|x|</button>
+
+          <button type="button" class="btn btn-sci" data-action="factorial" aria-label="factorial">x!</button>
+          <button type="button" class="btn btn-sci" data-action="exp-notation" aria-label="scientific exponent notation">EXP</button>
+          <button type="button" class="btn btn-sci" data-action="ans" aria-label="previous answer">ANS</button>
+          <button type="button" class="btn btn-sci btn-paren" data-action="open-paren" aria-label="open parenthesis">(</button>
+          <button type="button" class="btn btn-sci btn-paren" data-action="close-paren" aria-label="close parenthesis">)</button>
+        </section>
+
+        <div class="main-keypad">
+          
+          <section class="operator-buttons" aria-label="Operator keypad">
+            <button type="button" class="btn btn-action btn-clear" data-action="clear" aria-label="All Clear">AC</button>
+            <button type="button" class="btn btn-action btn-delete" data-action="delete" aria-label="Delete">DEL</button>
+            <button type="button" class="btn btn-op" data-action="percent" aria-label="percent">%</button>
+            <button type="button" class="btn btn-op btn-arithmetic" data-action="divide" aria-label="divide">÷</button>
+            <button type="button" class="btn btn-op btn-arithmetic" data-action="multiply" aria-label="multiply">×</button>
+            <button type="button" class="btn btn-op btn-arithmetic" data-action="subtract" aria-label="subtract">−</button>
+            <button type="button" class="btn btn-op btn-arithmetic" data-action="add" aria-label="add">+</button>
+            <button type="button" class="btn btn-op" data-action="negate" aria-label="plus minus sign change">+/−</button>
+            <button type="button" class="btn btn-action btn-equals" data-action="calculate" aria-label="calculate result">=</button>
+          </section>
+
+          <section class="number-buttons" aria-label="Number keypad">
+            <button type="button" class="btn btn-num" data-val="7" aria-label="7">7</button>
+            <button type="button" class="btn btn-num" data-val="8" aria-label="8">8</button>
+            <button type="button" class="btn btn-num" data-val="9" aria-label="9">9</button>
+            <button type="button" class="btn btn-num" data-val="4" aria-label="4">4</button>
+            <button type="button" class="btn btn-num" data-val="5" aria-label="5">5</button>
+            <button type="button" class="btn btn-num" data-val="6" aria-label="6">6</button>
+            <button type="button" class="btn btn-num" data-val="1" aria-label="1">1</button>
+            <button type="button" class="btn btn-num" data-val="2" aria-label="2">2</button>
+            <button type="button" class="btn btn-num" data-val="3" aria-label="3">3</button>
+            <button type="button" class="btn btn-num btn-zero" data-val="0" aria-label="0">0</button>
+            <button type="button" class="btn btn-num btn-dot" data-val="." aria-label="decimal point">.</button>
+          </section>
+
+        </div>
+
+      </div>
+
+      <footer class="calculator-footer">
+        <span class="tech-spec">DUAL POWER SYSTEM • TWO WAY POWER</span>
+      </footer>
+
+    </section>
+
+    <footer class="creator-credits">
+      Made By Arslan Sahil GtihuB Profile |  <a href="https://github.com/arslansahil850-alt" target="_blank" rel="noopener noreferrer">@arslansahil850-alt</a>
+    </footer>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
